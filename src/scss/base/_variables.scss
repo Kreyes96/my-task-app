@@ -1,0 +1,22 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+$main-font : 'Montserrat', sans-serif;
+
+/* Colors */
+$body-gradient-color : linear-gradient(64.5deg,rgba(245,116,185,1) 14.7%,rgba(89,97,223,1) 88.7%);
+$header-gradient-color : linear-gradient(to left,rgba(89,97,223,1),#797ebe);
+$white-color : #fff;
+$black-color : #000;
+$pink-color : #e93595;
+$purple-color : #5961df;
+$dark-blue-color : #323249;
+
+/* Sizes for Media queries */
+$cellphone-size : 480px;
+$tablet-size : 768px;
+$desktop-small-size : 1024px;
+$desktop-large-size : 1200px;
+
+/* Sizes for border-radius property */
+$small-border : 6px;
+$large-border : 20px;

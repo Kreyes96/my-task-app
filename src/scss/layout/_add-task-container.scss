@@ -1,0 +1,79 @@
+@use '../base/variables' as var;
+
+.add-task-container {
+   width: 100%;
+   display: none;
+   padding: 2rem;
+   background-color: var.$dark-blue-color
+};
+
+.showAdd-task-container {
+   display: block;
+}
+
+.task-form {
+   height: max-content;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1.2rem;
+}
+
+.form-group {
+   display: flex;
+   flex-direction: column;
+
+   label {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var.$white-color;
+   }
+
+   input[type="text"] {
+      height: 4rem;
+      font-size: 1.6rem;
+      color: var.$white-color;
+      border: none;
+      background-color: transparent;
+
+      &:focus {
+         outline: none;
+      }
+   }
+}
+
+input[type="submit"] {
+   align-self: flex-end;
+   padding: .8rem 2rem;
+   font-size: 1.5rem;
+   font-weight: 600;
+   color: var.$white-color;
+   border: none;
+   border-radius: var.$small-border;
+   background-color: var.$pink-color;
+
+   &:hover {
+      cursor: pointer;
+      background-color: darken(var.$pink-color, 10);
+   }
+}
+
+.alert-message-container {
+   width: 100%;
+   margin-block-end: 2rem;
+   padding: 1rem;
+   border-radius: var.$small-border;
+}
+
+.alert-message {
+   font-size: 1.3rem;
+   color: var.$white-color;
+   text-align: center;
+}
+
+.alert-message-error {
+   background-color: var.$pink-color;
+}
+
+.alert-message-success {
+   background-color: green;
+}

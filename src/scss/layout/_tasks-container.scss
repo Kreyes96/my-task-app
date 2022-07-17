@@ -1,0 +1,8 @@
+@use '../base/variables' as var;
+
+.tasks-container {
+   width: inherit;
+   height: 80%;
+   background-color: var.$dark-blue-color;
+   border-radius: 0 0 var.$large-border var.$large-border;
+}
