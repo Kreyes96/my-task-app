@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>My Tasks | An app to make a tasks list</title>
+   <link rel="stylesheet" href="./build/css/app.css">
+</head>
+
+<body>
+   <div class="main-container">
+      <div class="header-container">
+         <div class="date-info"></div>
+         
+         <div class="tasks-info">12 tasks</div>
+
+         <button class="addCancel-task-button">
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 448 512"
+               class="addCancel-task-icon add-icon">
+               <path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/>
+            </svg>
+            
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 320 512"
+               class="addCancel-task-icon cancel-icon">
+               <path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/>
+            </svg>
+         </button>
+      </div>
+
+      <div class="add-task-container">
+         <form class="task-form">
+            <div class="form-group">
+               <label for="description">Task description:</label>
+               <input type="text" id="description" placeholder="E.g. Wash the dishes">
+            </div>
+
+            <input type="submit" value="Add task">
+         </form>
+      </div>
+
+      <div class="tasks-container">
+         
+      </div>
+   </div>
+
+   <!-- Use compiled file when project it's done -->
+   <script src="./src/js/app.js"></script>
+</body>
+
+</html>

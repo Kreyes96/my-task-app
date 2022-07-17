@@ -1,0 +1,31 @@
+{
+  "name": "my-tasks-app",
+  "version": "1.0.0",
+  "description": "An app to make a tasks list",
+  "main": "gulpfile.js",
+  "scripts": {
+    "sass": "sass --watch src/scss/:build/css/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kreyes96/my-tasks-app.git"
+  },
+  "author": "Kevin Reyes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kreyes96/my-tasks-app/issues"
+  },
+  "homepage": "https://github.com/Kreyes96/my-tasks-app#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.12",
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.14",
+    "sass": "^1.53.0"
+  }
+}
