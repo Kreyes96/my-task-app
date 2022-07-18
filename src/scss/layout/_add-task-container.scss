@@ -4,7 +4,8 @@
    width: 100%;
    display: none;
    padding: 2rem;
-   background-color: var.$dark-blue-color
+   background-color: var.$dark-blue-color;
+   border-radius: 0 0 var.$large-border var.$large-border;
 };
 
 .showAdd-task-container {
