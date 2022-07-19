@@ -3,7 +3,7 @@
 .main-container {
    margin-block-start: 5rem;
    width: 500px;
-   // height: 550px;
+   max-height: 550px;
    border-radius: var.$large-border;
    box-shadow: 8px 8px 25px 1px rgba(0, 0, 0, 0.4);
    background-color: var.$dark-blue-color;

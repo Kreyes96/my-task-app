@@ -1,11 +1,26 @@
 @use '../base/variables' as var;
 
 .tasks-container {
-   width: inherit;
-   height: 80%;
-   padding: 0 2rem;
+   width: 100%;
+   max-height: 441px;
+   padding: 0 1.5rem 0 2rem;
    background-color: var.$dark-blue-color;
    border-radius: 0 0 var.$large-border var.$large-border;
+   overflow-y: scroll;
+   scroll-behavior: smooth;
+
+   &::-webkit-scrollbar {
+      width: 7px;
+   }
+
+   &::-webkit-scrollbar-track {
+      background-color: var.$dark-blue-color;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: var.$gray-color;
+      border-radius: var.$small-border;
+   }
 }
 
 .tasks-list {
@@ -34,17 +49,17 @@
 }
 
 .check-task {
-   flex-basis: 6%;
+   flex-basis: 5%;
 }
 
 .task-description {
-   flex-basis: 88%;
+   flex-basis: 90%;
    font-size: 1.5rem;
    color: var.$white-color;
 }
 
 .delete-task-button {
-   flex-basis: 6%;
+   flex-basis: 5%;
    width: 26px;
    height: 26px;
    border: none;

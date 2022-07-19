@@ -29,10 +29,24 @@ class Task {
       ui.showTasksList(this.tasks);
    };
 
+   deleteTask(id) {
+      this.tasks = this.tasks.filter((task) => task.id !== id);
+      this.numberTasks();
+
+      ui.deletePreviousChild();
+      ui.showTasksList(this.tasks);
+   };
+
    numberTasks() {
       const numberTasks = this.tasks.length;
       
       ui.showNumberTasksInfo(numberTasks);
+
+      if(numberTasks > 0) {
+         overflowProperty('add');
+      } else {
+         overflowProperty('remove');
+      };
    };
 };
 
@@ -72,13 +86,17 @@ class UI {
       alertMessage.classList.add('alert-message');
       
       alertMessageContainer.appendChild(alertMessage);
-
-      taskForm.appendChild(alertMessageContainer);
       
       if(typeMessage === 'error') {
          alertMessageContainer.classList.add('alert-message-error');
       } else if(typeMessage === 'success') {
          alertMessageContainer.classList.add('alert-message-success');
+      };
+
+      const alertMessages = document.querySelectorAll('.alert-message-container');
+      
+      if(alertMessages.length === 0) {
+         taskForm.appendChild(alertMessageContainer);
       };
 
       setTimeout(() => {
@@ -88,16 +106,17 @@ class UI {
 
    showTasksList(tasks) {
       tasks.forEach((task) => {
-         const { taskDescription } = task;
-
+         const { taskDescription, id } = task;
          const taskItem = document.createElement('li');
+
          taskItem.classList.add('task-item');
+         taskItem.setAttribute('data-id', id);
          taskItem.innerHTML = `
             <input type="checkbox" class="check-task">
             
             <span class="task-description">${taskDescription}</span>
             
-            <button class="delete-task-button">
+            <button class="delete-task-button" onclick="deleteTask(${id})">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="delete-task-icon"><path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/></svg>
             </button>
          `;
@@ -152,7 +171,7 @@ function setDay(day) {
       case 5:
          return 'Friday'
          break;
-      case 3:
+      case 6:
          return 'Saturday'
          break;
    
@@ -209,7 +228,6 @@ function addCancelTaskBtn() {
    const addTaskContainer = document.querySelector('.add-task-container');
    addTaskContainer.classList.toggle('showAdd-task-container');
 
-    
    if(addTaskContainer.classList.contains('showAdd-task-container')) {
       addIcon.classList.remove('show-icon');
       addIcon.classList.add('hidden-icon');
@@ -228,7 +246,7 @@ function addTask(e) {
    e.preventDefault();
 
    if(taskDescriptionInput.value === '') {
-      ui.showAlertMessage('You should add a Tastk Description', 'error');
+      ui.showAlertMessage('You should add a Task Description', 'error');
       taskDescriptionInput.style.borderBottom = '2px solid #e93595';
    } else {
       ui.showAlertMessage('Task added successfully', 'success');
@@ -242,5 +260,19 @@ function addTask(e) {
       task.numberTasks();
 
       taskForm.reset();
+   };
+};
+
+function deleteTask(id) {
+   task.deleteTask(id);
+};
+
+function overflowProperty(action) {
+   const mainContainer = document.querySelector('.main-container');
+   
+   if(action === 'add') {
+      mainContainer.style.overflow = 'hidden';
+   } else if(action === 'remove') {
+      mainContainer.style.removeProperty('overflow');
    };
 };

@@ -17,6 +17,9 @@ body {
    font-size: 1.6rem;
    font-family: var.$main-font;
    background: var.$body-gradient-color;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
 }
 
 *,
