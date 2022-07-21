@@ -1,4 +1,5 @@
 @use '../base/variables' as var;
+@use '../base/mixins' as mix;
 
 .header-container {
    width: 100%;
@@ -24,8 +25,12 @@
    }
 
    .day {
-      font-size: 3rem;
+      font-size: 2.2rem;
       font-weight: 600;
+      
+      @include mix.tablet-size {
+         font-size: 3rem;
+      }
    }
 
    .number-day {
@@ -37,6 +42,7 @@
       font-size: 1.8rem;
       font-weight: 400;
    }
+
 }
 
 .tasks-info {
